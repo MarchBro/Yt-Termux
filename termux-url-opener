@@ -1,83 +1,119 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash           
+# Yt-TERMUX                               
+# GITHUB.COM/MARCHBRO                   # BY BESSONOV MAKSYM
 
-# TERMUX-YTD 2.0
-# BY KHAN SAAD
-# GITHUB.COM/KHANSAAD1275
 
-# SETTINGS THAT YOU CAN CHANGE-----
+# НАСТРОЙКИ КОТОРЫЕ ВЫ МОЖЕТЕ ИЗМЕНИТЬ-----                  
 
-fpath='/data/data/com.termux/files/home/storage/shared/Youtube/%(title)s.%(ext)s'
+mypath="/storage/emulated/0/Youtube/"
+bit="--audio-quality 320K"
+af="--audio-format mp3"
 
 # ----------
 
-#check if reel
+# ---------
+fpath="$mypath%(title)s.%(ext)s"
+# ---------
+
+##### check if reel
 if [[ "$1" == *"shorts"* ]]; then
-  yt-dlp -o $fpath $1 
+  yt-dlp -o $fpath $1
+
   exit
 
 else
-	echo " "
+        echo " "
 fi
 
 
-echo -e "\e[031m" " ▄ █   ▄▀▀▀▀▀▄   █ ▄   == Termux-YTD 2.0 ="
-echo -e "\e[031m" "▄▄▀▄   █─▀─▀─█  ▄▀▄▄   With Enhanced Speed"
-echo -e "\e[031m" "     ▀▄▒▒▒▒▒▒▒▒▒▄▀    --------------------"
-echo -e "\e[031m" "     █────▀────█       Check out my Github"
-echo -e "\e[031m" "     █────▀────█       For More info...   "
-echo -e "\e[036m" "╔════════════════════════════════════════╗"                                                                          
-echo -e "\e[032m" "║ ♚ Project Name : 🆃🅴🆁🅼🆄🆇-🆈🆃🅳 2.0™        ║"
-echo -e "\e[032m" "║ ♚ Author : KhanSaad1275                ║"
-echo -e "\e[032m" "║ ♚ Github : g̲i̲t̲h̲u̲b̲.̲c̲o̲m̲/̲k̲h̲a̲n̲s̲a̲a̲d̲1̲2̲7̲5̲/̲    ║"
-echo -e "\e[032m" "║ ♚ Website : www.LearnTermux.tech       ║"
+echo -e "\e[036m" "╔════════════════════════════════════════╗"
+echo -e "\e[032m" "║ ✦ Имя проекта :  🆈🆃-🆃🅴🆁🅼🆄🆇™            ║"
+echo -e "\e[032m" "║ ✦ Aвтор :   March Bro                  ║"
+echo -e "\e[032m" "║ ✦ Github :  github.com/MarchBro/       ║"
+echo -e "\e[032m" "║ ✦ Сайт :    www.4pda.ru                ║"
 echo -e "\e[036m" "╠════════════════════════════════════════╝"
-echo -e "\e[036m" "╠═▶ [𝗦𝗲𝗹𝗲𝗰𝘁 𝗔 𝗙𝗼𝗿𝗺𝗮𝘁]  ➳"
-echo -e "\e[032m" "╠═▶ 1. Music Mp3♫"
-echo -e "\e[032m" "╠═▶ 2. Video 360p"
-echo -e "\e[032m" "╠═▶ 3. Video 480p"
-echo -e "\e[032m" "╠═▶ 4. Video 720p"
-echo -e "\e[032m" "╠═▶ 5. Video 1080p"
-echo -e "\e[032m" "╠═▶ 6. Video 2160p"
-echo -e "\e[032m" "╠═▶ 7. Exit Termux-YTD" 
-echo -e "\e[032m" "╠═▶ A. About." 
-printf "\e[032m ╚═:➤ \e[0m "
+echo -e "\e[036m" "╠═▶ [Выберете действие]"
+echo -e "\e[032m" "╠═▶ 1. Mp3 320+редактор id3 ♫"
+echo -e "\e[032m" "╠═▶ 2. M4a лучшее качество ♫"
+echo -e "\e[032m" "╠═▶ 3. Видео 360p"
+echo -e "\e[032m" "╠═▶ 4. Видео 480p"
+echo -e "\e[032m" "╠═▶ 5. Видео 720p"
+echo -e "\e[032m" "╠═▶ 6. Видео 1080p"
+echo -e "\e[032m" "╠═▶ 7. Видео 2160p"
+echo -e "\e[032m" "╠═▶ 8. Посмотреть форматы"
+echo -e "\e[032m" "╠═▶ 9. Выход"
+printf "\e[036m ╚═:➤ \e[0m "
 read choice
 
 
-case $choice in 
-	1)
-	yt-dlp -f 'bestaudio[ext=m4a]' -o $fpath $1
+case $choice in
 
- ;;
-	2)
-	yt-dlp -f "best[height<=360]" -o $fpath $1 
-	;;
+1)
+echo -e "\e[036m" "║      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+echo -e "\e[036m" "║      ┃ Заполните необходимые поля: ┃"
+echo -e "\e[036m" "║      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+echo -e "\e[036m" "║      ● Артист ✎"
+  printf  "\e[036m ╚═:➤ \e[0m "
+read artist
+echo -e "\e[036m" "║      ● Композиция ✎"
+  printf  "\e[036m ╚═:➤ \e[0m "
+read title
+echo -e "\e[036m" "║      ● Альбом ✎"
+  printf  "\e[036m ╚═:➤ \e[0m "
+read album
+
+# -------------
+mpath="$mypath$artist - $title"
+# -------------
+
+echo -e "\e[032m" "Выполняется загрузка..."
+yt-dlp -f 'ba' -x $af $bit -o "$mpath-.%(ext)s" $1
+mid3v2 -a "$artist" -t "$title" -A "$album" "$mpath-.mp3"
+        ;;
+
+        2)
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -f 'bestaudio[ext=m4a]' -o $fpath $1
+        ;;
 
 	3)
-	yt-dlp -f 'best[height<=480]' -o $fpath $1 
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -f 'best[height<=360]' -o $fpath $1
 	;;
 
 	4)
-	yt-dlp -f 'best[height<=720]' -o $fpath $1 
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -f 'best[height<=480]' -o $fpath $1
+        ;;
+
+        5)
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -f 'best[height<=720]' -o $fpath $1
+        ;;
+
+        6)
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -f 'best[height<=1080]' -o $fpath $1
+        ;;
+
+        7)
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -f 'best[height<=2160]' -o $fpath $1
 	;;
 
-	5)
-	yt-dlp -f 'best[height<=1080]' -o $fpath $1 
-	;;
+	8)
+	echo -e "\e[032m" "Выполняется загрузка..."
+        yt-dlp -F $1
+        read -p "Нажмите ENTER для выхода"
+        ;;
 
-	6)
-	yt-dlp -f 'best[height<=2160]' -o $fpath $1 
-	;;
+	9)
+	echo "	До скорой встречи)))"
+        ;;
 
-	7)
-	break
-	;;
-	
-	A|a)
-	echo "Hello this is Saad! , Termux-YTD2.0 is a light weight tool to download any kind of Video, Music or shorts from Youtube with 2 clicks on your phone using Termux. For more information and tools you can check out my github https://github.com/khansaad1275/Termux-YTD2.0. Visit my website LEARNTERMUX.TECH for more termux releted containts"
-	;;
-	
-	*)
-	yt-dlp -f 'best[height<=2160]' -o $path $1 
+
+
+        *)
+        yt-dlp -f 'best[height<=2160]' -o $path $1
 esac
 
